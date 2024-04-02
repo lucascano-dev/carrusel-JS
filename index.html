@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carruseles Responsivos</title>
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .carousel {
+        margin: 50px;
+      }
+      .card {
+        margin: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #f8f8f8;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .slick-arrow {
+        background-color: red;
+        z-index: 1;
+      }
+      .slick-siguiente {
+        font-size: 30px; /* Cambia el tamaño según tus preferencias */
+      }
+      .slick-atras {
+        font-size: 30px; /* Cambia el tamaño según tus preferencias */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carousel">
+      <div class="carousel-items d-flex">
+        <!-- Se puede reemplazar Card*n por cards de bootstrap -->
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 7</div>
+        <div class="card">Card 8</div>
+        <div class="card">Card 9</div>
+        <div class="card">Card 10</div>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel-items d-flex">
+        <div class="card">Card 11</div>
+        <div class="card">Card 12</div>
+        <div class="card">Card 13</div>
+        <div class="card">Card 14</div>
+        <div class="card">Card 15</div>
+        <div class="card">Card 16</div>
+        <div class="card">Card 17</div>
+        <div class="card">Card 18</div>
+        <div class="card">Card 19</div>
+        <div class="card">Card 20</div>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel-items d-flex">
+        <div class="card">Card 21</div>
+        <div class="card">Card 22</div>
+        <div class="card">Card 23</div>
+        <div class="card">Card 24</div>
+        <div class="card">Card 25</div>
+        <div class="card">Card 26</div>
+        <div class="card">Card 27</div>
+        <div class="card">Card 28</div>
+        <div class="card">Card 29</div>
+        <div class="card">Card 30</div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.carousel-items').slick({
+          slidesToShow: 5, //Se veraán 5 cards
+          slidesToScroll: 5, //se moverán 5 cards
+          infinite: true, //Carrusel infinito
+          arrows: true,
+          prevArrow: '<button type="button" class="slick-atras"><i class="fa-solid fa-circle-arrow-left"></i></button>', //Aqui le puedo poner HTML al boton
+          nextArrow:
+            '<button type="button" class="slick-siguiente"><i class="fa-solid fa-circle-arrow-right"></i></button>', //Aqui le puedo poner HTML al boton
+          responsive: [
+            //cuando sea menos que los pixeles indicados el tamaño de la ventana se hace responsive
+            {
+              breakpoint: 1000,
+              settings: {
+                slidesToShow: 3, //Se veraán 3 cards
+                slidesToScroll: 3, //se moverán 3 cards
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+              },
+            },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
